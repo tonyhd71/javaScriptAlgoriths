@@ -6,4 +6,4 @@ function addUpTo(n) {
     }
     return total;
 }
-console.log(addUpTo(8));
+console.log(addUpTo(10));
