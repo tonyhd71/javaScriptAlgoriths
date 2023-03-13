@@ -6,3 +6,4 @@ function addUpTo(n) {
     }
     return total;
 }
+console.log(addUpTo(8));
