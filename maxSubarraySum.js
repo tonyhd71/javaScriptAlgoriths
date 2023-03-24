@@ -36,4 +36,9 @@ function maxSubArraySum(arr, num) {
     }
     return maxSum;
 }
-maxSubArraySum([1,6,9,2,1,8,5,6,3],3);
+//maxSubArraySum([1,6,9,2,1,8,5,6,3],3);
+function sameFrequency(num1, num2){
+    // good luck. Add any arguments you deem necessary.
+    
+  }
+  

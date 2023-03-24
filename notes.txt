@@ -18,3 +18,13 @@ maxSubArray([],4) // null
 	this patters involves dividingn a data set into smaller chunks and then
 repeating a process with a subset of data.
 This pattern can tremendously decrease time complexity/
+Write a function that accepts an integer and an array as an input and return the index of that number in the array.
+
+A NAIVE SOLUTION ------------------------------>This is linear search. Time complexity O(N)
+function search (arr,val) {
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] === val) {
+			return i'
+		}
+	}
+}
