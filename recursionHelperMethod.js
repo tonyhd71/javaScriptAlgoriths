@@ -1,5 +1,6 @@
 function collectOddValues(arr) {
     let result = [];
+    //THE REASON WE DEFINE RESULT OUTSIDE THE HELPER METHOD IS IF WE DEFINED IT INSIDE THE HELPER M,ETHOD IT WOULD RESET AN EMPTY ARRAY
 
     function helper(helperInput) {
         if (helperInput.length === 0) {
