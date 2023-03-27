@@ -1,34 +1,23 @@
 function binarySearch(arr, value) {
-    //is value less than 
     let lastValue = arr.indexOf(arr[arr.length - 1]);
     let firstValue = arr.indexOf(arr[0]);
     let leftPointer = firstValue;
     let rightPointer = lastValue;
     let middlePoint = arr[Math.floor((rightPointer+leftPointer)/2)];
-    if (value === firstValue) return arr.indexOf(value);
+    if (value === arr[0]) return arr.indexOf(value);
+    if (value === arr[arr.length -1]) return arr.indexOf(value);
     while(leftPointer < rightPointer) {
-        //return middlePoint is 10
-        //return rightPointer; is 9
         if (value === middlePoint) return arr.indexOf(value);  
         if (value < middlePoint) {
-           //return rightPointer; //still 9
             reassignRightPointer();
-            //return rightPointer; is 4
             reAssignMiddlePoint();
-            //return middlePoint; midpoint is 6
             if (value === middlePoint) return arr.indexOf(value);
-            if (value < middlePoint) {
-                //return rightPointer; stll 4
-                reassignRightPointer();
-                //return rightPointer; is 2
-                //return middlePoint; is 6
-                reAssignMiddlePoint();
-                //return middlePoint; is 4
-                if (value === middlePoint) return arr.indexOf(value);
-            }
         } 
         if (value > middlePoint) {
-            alert('bigger');
+            reassignLeftPointer();
+            middlePointWhenValGreater();
+            if (value === arr[leftPointer]) return arr.indexOf(value);
+            if (value === middlePoint) return arr.indexOf(value);
         }
     }
     function reassignRightPointer() {
@@ -37,9 +26,11 @@ function binarySearch(arr, value) {
     function reAssignMiddlePoint() {
         return middlePoint = arr[Math.round((rightPointer+leftPointer)/2)];
     }
-        //if yes, return value
-        //if no, is value less than middlePoint?
-            //if yes, rightPointer equal to middle value. 
-            //if no, leftPointer is middleValue
+    function reassignLeftPointer() {
+        return leftPointer = arr.indexOf(middlePoint) + 1; // we don't want left pointer to be same as old right pointer
+    }
+    function middlePointWhenValGreater() {
+        return middlePoint = arr[Math.round((rightPointer + leftPointer)/2)];
+    }
 }
-console.log(binarySearch([2,4,6,8,10,12,14,16,18,20], 4));
+console.log(binarySearch([2,4,6,8,10,12,14,16,18,20,22,24,26,28,30], 18));
