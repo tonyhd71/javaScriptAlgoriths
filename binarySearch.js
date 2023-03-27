@@ -50,4 +50,4 @@ function binarySearch(arr, value) {
         }
     }
 }
-console.log(binarySearch([4,13,15,17,19,28,33,56,70,71,72],17));
+console.log(binarySearch([2,4,6,8,10,12,14],12));
