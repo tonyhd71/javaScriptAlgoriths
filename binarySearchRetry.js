@@ -4,6 +4,7 @@ function binarySearch(arr, value) {
     let leftPointer = firstValue;
     let rightPointer = lastValue;
     let middlePoint = arr[Math.floor((rightPointer+leftPointer)/2)];
+    if (!arr.includes(value)) return -1;
     if (value === arr[0]) return arr.indexOf(value);
     if (value === arr[arr.length -1]) return arr.indexOf(value);
     while(leftPointer < rightPointer) {
@@ -33,4 +34,4 @@ function binarySearch(arr, value) {
         return middlePoint = arr[Math.round((rightPointer + leftPointer)/2)];
     }
 }
-console.log(binarySearch([2,4,6,8,10,12,14,16,18,20,22,24,26,28,30], 18));
+console.log(binarySearch([2,4,6,8,10,12,14,16,18,20,22,24,26,28,30], 56));
