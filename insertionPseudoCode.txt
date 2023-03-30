@@ -1,0 +1,5 @@
+insertion pseudo code
+- start by picking the second element in the array
+- now compare the second element with the one before it and swap if necessary
+- continue to the next element through the sorted portion (i.e the left side) to place the element in the correct place.
+- repeat until the array is sorted
