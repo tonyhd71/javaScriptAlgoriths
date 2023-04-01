@@ -1,16 +1,26 @@
-function mergeSort(arr1, arr2) {
+function merge(arr1, arr2) {
     //recommend use while loop
     let results = [];
     let i =0;
     let j = 0;
-    while(i < arr1.length && j < arr2.length) {
-        if (arr2[j] > arr[i]) {
+    while(i < arr1.length && j < arr2.length) { //if both i and j are still iterating
+        if (arr2[j] > arr1[i]) {
             results.push(arr1[i]);
             i++;
+        } else {
+            results.push(arr2[j]);
+            j++;
         }
     }
+    while(i < arr1.length) { //if only i is iterating
+        results.push(arr1[i]);
+        i++;
+    }
+    while(j < arr2.length) { //if only j is iterating
+        results.push(arr2[j]);
+        j++;
+    }
     return results;
-    console.log(newArray);
         /*
         create an empty array, take a look at the smallest values in each input array
         while there are still values we haven't looked at..
@@ -24,5 +34,5 @@ function mergeSort(arr1, arr2) {
         [1]
             */
 }
-mergeSort([1,10,50], [2,14,99,100]);
+console.log(merge([1,10,50], [2,14,99,100]));
 //       i 0 1 2 3     0  1  2  3
