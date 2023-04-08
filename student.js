@@ -4,6 +4,7 @@ class Student {
 	this.lastName = lastName;
 	this.grade = grade;
 	this.tardies = 0;
+	this.scores = [];
 	}
 	fullName() {
 		return `Your full name is ${this.firstName} ${this.lastName}`;
@@ -15,10 +16,13 @@ class Student {
 		}
 		return `${this.firstName} ${this.lastName} has been late ${this.tardies} times`;
 	}
+	addScore(score) {
+		this.scores.push(score);
+	}
 	}
 //to create a new instance
 let firstStudent = new Student("Colt", "Steele", 1);
 let secondStudent = new Student("Blue", "Steele", 3);
-for (let i = 0; i <= 2;i++) {
-	console.log(firstStudent.markLate());
-}
+console.log(firstStudent.markLate());
+console.log(firstStudent.addScore());
+
