@@ -98,6 +98,10 @@ class SinglyLinkedList {
 		this.length++;
 		return true;
 	}
+	remove(index) {
+		if (index < 0 || index >= this.length) return undefined;
+		if (index === 0) return this.shift();
+	}
 }
 	let list = new SinglyLinkedList();
 	list.push("hey");
