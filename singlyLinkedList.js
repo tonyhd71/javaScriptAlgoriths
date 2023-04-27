@@ -82,21 +82,21 @@ class SinglyLinkedList {
 		return false;
 	}
 	insert(index, val) {
-		if (index < 0 || index > this.length) {
-		if (index === this.length) return this.push(val); 
-		if (index === 0) return this.unshift(val);
+		if (index < 0 || index > this.length) return false;
+		if (index === this.length) {
+			this.push(val); // index equal to length is ok, just means insert at end 
+			return true;
+		} 
+		if (index === 0) {
+			this.unshift(val);
+			return true;
+		}
 		let newNode = new Node(val);
-		}
-	/*One way of traversing below
-	traverse() {
-		let current = this.head;
-		while(current) {
-			console.log(current.val);
-			current = current.next;
-		}
-		
-	}
-	*/	
+		let prev = this.get(index - 1);
+		let temp = prev.next;
+		prev.next = temp;
+		this.length++;
+		return true;
 	}
 }
 	let list = new SinglyLinkedList();
@@ -104,4 +104,5 @@ class SinglyLinkedList {
 	list.push("yo");
 	list.push("hi");
 	list.push("hello");
-	console.log(list.get(2));
+	list.insert(0, "second value");
+	console.log(list);
