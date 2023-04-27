@@ -83,9 +83,10 @@ class SinglyLinkedList {
 	}
 	insert(index, val) {
 		if (index < 0 || index > this.length) {
-			
+		if (index === this.length) return this.push(val); 
+		if (index === 0) return this.unshift(val);
+		let newNode = new Node(val);
 		}
-	}
 	/*One way of traversing below
 	traverse() {
 		let current = this.head;
@@ -95,7 +96,8 @@ class SinglyLinkedList {
 		}
 		
 	}
-	*/
+	*/	
+	}
 }
 	let list = new SinglyLinkedList();
 	list.push("hey");
