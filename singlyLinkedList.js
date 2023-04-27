@@ -53,7 +53,7 @@ class SinglyLinkedList {
 	}
 	unshift(val) {
 		let newNode = new Node(val);
-		if (!head) {
+		if (!this.head) {
 			this.head = newNode;
 			this.tail = this.head;
 		} else {
@@ -73,12 +73,18 @@ class SinglyLinkedList {
 		}
 		return current;
 	}
-	shift() {
-		if (!this.head) return undefined;
-		let currentHead = this.head;
-		this.head = currentHead.next;
-		this.length--;
-		return currentHead;
+	set(index, val) {
+		let foundNode = this.get(index);
+		if (foundNode) {
+			foundNode.val = val;
+			return true;
+		}
+		return false;
+	}
+	insert(index, val) {
+		if (index < 0 || index > this.length) {
+			
+		}
 	}
 	/*One way of traversing below
 	traverse() {
@@ -92,6 +98,8 @@ class SinglyLinkedList {
 	*/
 }
 	let list = new SinglyLinkedList();
-	console.log(list);
-	list.pop();
-	console.log(list);
+	list.push("hey");
+	list.push("yo");
+	list.push("hi");
+	list.push("hello");
+	console.log(list.get(2));

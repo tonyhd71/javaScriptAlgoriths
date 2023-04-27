@@ -45,3 +45,45 @@ We are manually counting, not like an array
 -If the index is less than zero or greater than zero, return null
 -Loop through the list until you reach the index and return the node at that specific index
 -
+//SHIFT NOTES 4/28/23
+Shifting pseudocode
+-  If there are no nodes, return undefined
+- Store theb current head property in a variable
+- Set the head property to be the current head's next property
+- Decrement the length by 1
+- Return the value of the node removed
+//UNSHIFTING PSEUDOCODE
+- This function should accept a value
+- Create a new node using the value passed to the function
+- Otherwise se the newly created node's next property to be the current head property on the list
+- Set the head property on the list to be that newly created node
+//GET NOTES 
+-n get is a method that takes a number index or position and returns the item in that position.
+- takes in a number, traverse the list that many times and then return item at that index
+- not as efficient as an array 
+//GET PSEUDOCODE
+-this function should accept an index
+- if the index is less than zero or greater than or equal to the length of the list, return null 
+- loop through the list until you reach the index and return the node at that specific index
+//SET notes
+- Changing the value of a node based on its position in the linked list
+- set is a method that will accept two things, a position or index, and a value to update that item at that index to
+//SET PSEUDOCODE
+- This function should accept a value and an index
+- Use your get function to find that specific node
+-If the node is not found, return false
+- If the node is found, set the value of that node to be the value passed to the function and return true
+//INSERT NOTES
+-Adding a node to the linked list at a specific position  
+-Takes an index and a value
+- INSERT PSEUDOCODE
+-if the index is less than zero or greater than the length, return false
+- If the index is the same as the length, push a new node to the end of the list
+- If the index is 0, unshift a new node to the start of the list 
+- Otherwise, using the get method, access the node at the index - 1
+- Set the property on that node to be the new node
+-Set the next property on the new node to be the previous next
+- increment the length
+- return true
+ 
+
