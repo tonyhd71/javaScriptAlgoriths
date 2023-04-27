@@ -37,3 +37,11 @@ function search(array, val) {
 		let 
 	}
 }
+#April 26 2023 GET SINGLY LINKED LIST
+Get is a method that takes a number, index, or position and returns an item in that position. 0 should give us the first item, 4 should give us the fifth position
+We are manually counting, not like an array
+#PSEUDOCODE FOR GET
+-This function should accept an index
+-If the index is less than zero or greater than zero, return null
+-Loop through the list until you reach the index and return the node at that specific index
+-
