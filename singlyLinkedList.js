@@ -101,12 +101,31 @@ class SinglyLinkedList {
 	remove(index) {
 		if (index < 0 || index >= this.length) return undefined;
 		if (index === 0) return this.shift();
+		if (index === this.length - 1) return this.pop();
+		//above are the 3 edge cases
+		let previousNode = this.get(index -1);
+		let removed = previousNode.next;
+		previousNode.next = removed.next;
+		this.length--;
+		return removed;
+	}
+	print() {
+		let arr = [];
+		let current = this.head;
+		while(current) {
+			arr.push(current.val);
+			current = current.next;
+		}
+	}
+	reverse() {
+
 	}
 }
 	let list = new SinglyLinkedList();
-	list.push("hey");
-	list.push("yo");
-	list.push("hi");
-	list.push("hello");
-	list.insert(0, "second value");
+	list.push(100);
+	list.push(200);
+	list.push(300);
+	list.push(400);
+	list.remove(1);
+	list.remove(0);
 	console.log(list);
