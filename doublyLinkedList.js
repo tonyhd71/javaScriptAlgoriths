@@ -44,19 +44,19 @@ class DoublyLinkedList {
         if (this.length === 1) {
             this.head =null;
             this.tail = null;
+        } else {
+            this.head = oldHead.next;
+            this.head.prev = null;
+            oldHead.next = null;
         }
-        this.head = oldHead.next;
-        this.head.prev = null;
-        oldHead.next = null;
         this.length--;
         return oldHead;
     }
 }
 let list = new DoublyLinkedList();
-list.push(1);
-list.push(2);
-list.push(3);
-list.pop();
+list.push('harry');
+list.push('ron');
+list.push('hermione');
 console.log(list);
 /*
 let first = new Node(12);
