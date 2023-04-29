@@ -1,4 +1,4 @@
 #!/bin/bash
 git add *;
 git commit -m 'idk';
-git push -u origin main;
+git push -u git@github.com:tonyhd71/javaScriptAlgoriths.git main
