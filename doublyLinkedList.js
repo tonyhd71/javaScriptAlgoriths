@@ -65,11 +65,22 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+    get(index) {
+        if (index < 0 || index>= this.length) return null;
+        let count = 0;
+        let current = this.head;
+        while (count != index) {
+            current = current.next;
+            count++;
+        }
+        return current;
+    }
 }
 let list = new DoublyLinkedList();
 list.push('harry');
 list.push('ron');
 list.push('hermione');
+list.unshift('new person');
 console.log(list);
 /*
 let first = new Node(12);
