@@ -25,13 +25,25 @@ class DoublyLinkedList {
         return this;
     }
     pop() {
-
+        if (!this.head) return undefined;
+        let poppedNode = this.tail;
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.tail = poppedNode.prev;
+            this.tail.next = null;
+            poppedNode.prev = null;
+        }
+        this.length--;
+        return poppedNode;
     }
 }
 let list = new DoublyLinkedList();
-list.push(99);
-list.push(100);
-console.log(list)
+list.push(1);
+list.push(2);
+list.pop(2);
+console.log(list);
 /*
 let first = new Node(12);
 first.next = new Node(13);
