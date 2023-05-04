@@ -79,16 +79,34 @@ class DoublyLinkedList {
             let current = this.tail;
             while(count != index) {
                current = current.prev;
-               count --; 
+               count--; 
             }
         }
         return current;
     }
+    set(index, val) {
+        let foundNode = this.get(index);
+        if (foundNode != null) {
+            foundNode.val = val;
+            return true;
+        }
+        return false;
+    }
+    insert(index, val) {
+        if (index < 0 || index >= this.length) return false;
+        if (index === 0) return this.unshift(val);
+        
+        if (index === this.length) {
+            return this.push();
+        } else {
+            return this.get(index -1);
+        }
+    }
 }
 let list = new DoublyLinkedList();
-list.push('last');
-list.push('actually last');
-list.get(1);
+list.push('henry');
+list.push('romaine');
+list.push('hermione');
 console.log(list);
 /*
 let first = new Node(12);
