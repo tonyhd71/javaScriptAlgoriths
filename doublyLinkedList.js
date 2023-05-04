@@ -67,20 +67,28 @@ class DoublyLinkedList {
     }
     get(index) {
         if (index < 0 || index>= this.length) return null;
-        let count = 0;
-        let current = this.head;
-        while (count != index) {
-            current = current.next;
-            count++;
+        if (index <= this.length/2) {
+            let count = 0;
+            let current = this.head;
+            while (count != index) {
+                current = current.next;
+                count++;
+            }
+        } else {
+            let count = this.length -1;
+            let current = this.tail;
+            while(count != index) {
+               current = current.prev;
+               count --; 
+            }
         }
         return current;
     }
 }
 let list = new DoublyLinkedList();
-list.push('harry');
-list.push('ron');
-list.push('hermione');
-list.unshift('new person');
+list.push('last');
+list.push('actually last');
+list.get(1);
 console.log(list);
 /*
 let first = new Node(12);
